@@ -6,5 +6,11 @@ clone this repo.
 `npm install`
 
 ## Start server
+
+### With node:
 `$ node app.js`
 visit http://localhost:3000
+
+### With express:
+`$ node app-express.js`
+visit http://localhost:8888
