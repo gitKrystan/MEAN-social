@@ -7,19 +7,39 @@
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   </head>
-  <body>
-    <div class="container">
+  <body ng-app="app">
+    <div ng-controller="PostsCtrl" class="container">
       <h1>Recent Posts</h1>
       <ul class="list-group">
-        <li class="list-group-item">
-          <strong>@dickeyxxx</strong>
-          <span>Node rules!</span>
-        </li>
-        <li class="list-group-item">
-          <strong>@jeffdickey</strong>
-          <span>Trying out angular.js</span>
+        <li ng-repeat="post in posts" class="list-group-item">
+          <strong>@{{ post.username }}</strong>
+          <span>{{ post.body }}</span>
         </li>
       </ul>
     </div>
+
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js'></script>
+  <script>
+    // Module declaration: first argument is name of module, second is an array
+    // of modules that this module depends on.
+    var app = angular.module('app', []);
+
+    // Controller declaration: first argument is name of controller, second is
+    // the function that builds an instance of the controller. Dependency
+    // inject $scope
+    // $scope is an object you can access in both the html and in the controller
+    app.controller('PostsCtrl', function($scope) {
+      $scope.posts = [
+        {
+          username: 'dickeyxxx',
+          body: 'Node rules!'
+        },
+        {
+          username: 'jeffdickey',
+          body: 'trying out angular.js'
+        }
+      ]
+    });
+  </script>
   </body>
 </html>
