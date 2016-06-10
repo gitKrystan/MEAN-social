@@ -1,0 +1,22 @@
+{
+  "name": "social",
+  "version": "1.0.0",
+  "description": "social app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitKrystan/MEAN-social.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gitKrystan/MEAN-social/issues"
+  },
+  "homepage": "https://github.com/gitKrystan/MEAN-social#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
